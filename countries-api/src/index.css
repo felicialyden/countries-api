@@ -1,11 +1,11 @@
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
-  font-weight: 400;
+  font-weight: 300;
 
   color-scheme: light dark;
-  color: black;
-  background-color: whitesmoke;
+  color: hsl(200, 15%, 8%);
+  background-color: hsl(0, 0%, 98%);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -33,11 +33,30 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
+  margin-bottom: 20px;
 }
 
-h1 {
-  font-size: 2.5em;
-  line-height: 1.1;
+.country-component {
+  background-color: white;
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(233, 232, 232, 0.5);
+}
+
+.small-img {
+  width: 100%;
+}
+
+.country-info {
+  padding: 20px;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+p {
+  margin: 5px 0px;
 }
 
 button {
@@ -48,7 +67,7 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: whitesmoke;
+  background-color: hsl(0, 0%, 98%);
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -60,6 +79,14 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+.bold {
+  font-weight: 600;
+}
+
+.bolder {
+  font-weight: 800;
+}
+
 .align-right {
   margin-right: 0;
   margin-left: auto;
@@ -68,4 +95,8 @@ button:focus-visible {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.clickable:hover {
+  cursor: pointer;
 }
