@@ -1,15 +1,35 @@
 //import { useState } from 'react'
 import React from 'react'
-import './App.css'
+import './index.css'
+import { CountryComponent } from './Components/country-component'
 
 export function App() {
 
   return (
-    <>
       <div>
-        <h1>Hello</h1>
+        <div id='top-bar'>
+        <h1>Where in the world</h1>
+        <button className='align-right center-content'>Dark mode</button>
+        </div>
+        <div id='search-options'>
+        <input type='text' placeholder='Search for a country...'></input>
+        <label className='align-right'>Filter by region</label> 
+    <select name="regions" id="regions"> 
+        <option value="africa">Africa</option> 
+        <option value="america">America</option> 
+        <option value="asia">Asia</option> 
+        <option value="europe">Europe</option> 
+        <option value="oceania">Oceania</option> 
+    </select>
+        </div>
+        <CountryComponent 
+        imgPath='test'
+        countryName='Sweden'
+        population={10000000}
+        region='Europe'
+        capital='Stockholm'
+        />
       </div>
-    </>
   )
 }
 
