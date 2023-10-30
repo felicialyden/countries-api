@@ -13,8 +13,8 @@ export function App() {
         </div>
         <div id='search-options'>
         <input type='text' placeholder='Search for a country...'></input>
-        <label className='align-right'>Filter by region</label> 
-    <select className='clickable' name="regions" id="regions"> 
+    <select className='clickable align-right' name="regions" id="regions"> 
+        <option value="filter">Filter by region</option> 
         <option value="africa">Africa</option> 
         <option value="america">America</option> 
         <option value="asia">Asia</option> 
