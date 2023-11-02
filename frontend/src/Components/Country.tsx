@@ -1,4 +1,3 @@
-import React from 'react'
 import '../index.css'
 
 type Country = {
@@ -9,7 +8,7 @@ type Country = {
     capital: string
 }
 
-export const CountryComponent = (props: Country) => {
+export const Country = (props: Country) => {
 
 return (
     <div className='country-component clickable' id={props.countryName} onClick={()=> console.log('click')}>

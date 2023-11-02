@@ -1,7 +1,7 @@
 //import { useState } from 'react'
-import React from 'react'
 import './index.css'
-import { CountryComponent } from './Components/country-component'
+import { Country } from './Components/Country'
+import { Dropdown } from './Components/Dropdown'
 
 export function App() {
 
@@ -13,16 +13,9 @@ export function App() {
         </div>
         <div id='search-options'>
         <input type='text' placeholder='Search for a country...'></input>
-    <select className='clickable align-right' name="regions" id="regions"> 
-        <option value="filter">Filter by region</option> 
-        <option value="africa">Africa</option> 
-        <option value="america">America</option> 
-        <option value="asia">Asia</option> 
-        <option value="europe">Europe</option> 
-        <option value="oceania">Oceania</option> 
-    </select>
+        <Dropdown />
         </div>
-        <CountryComponent 
+        <Country 
         imgPath='https://flagcdn.com/w320/se.png'
         countryName='Sweden'
         population={10000000}
