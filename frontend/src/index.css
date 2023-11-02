@@ -2,6 +2,7 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 300;
+  width: 100%;
 
   color-scheme: light dark;
   color: hsl(200, 15%, 8%);
@@ -17,7 +18,6 @@
 
 body {
   margin: 10px;
-  display: flex;
 }
 
 #top-bar {
@@ -25,8 +25,7 @@ body {
   flex-direction: row;
   align-items: center;
   color: black;
-  width: 700px;
-
+  width: 100%;
 }
 
 #search-options {
@@ -63,20 +62,10 @@ button {
   height: 30px;
   border-radius: 8px;
   border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
+  padding: 10px;
+  font-size: 14px;
   background-color: hsl(0, 0%, 98%);
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }
 
 .bold {
