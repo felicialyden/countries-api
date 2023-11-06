@@ -17,7 +17,20 @@ app.get('/api/countries', async (req, res) => {
   } catch (error) {
     console.log(error)
   }
+})
 
+app.get('/api/countries/:name', async (req, res) => {
+  try {
+    const countryName = req.params.name
+    console.log('countryName', countryName)
+    const data = await fs.readFile(path.join('./db/data.json'), { encoding: 'utf8'})
+    const jsonData = await JSON.parse(data)
+    //@ts-ignore
+    const country = await jsonData.find(({ name }) => name.toLowerCase() === countryName)
+    res.json(country) 
+  } catch (error) {
+    console.log(error)
+  }
 })
 
 app.listen(port, () => {
