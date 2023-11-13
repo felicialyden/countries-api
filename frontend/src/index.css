@@ -35,9 +35,15 @@ body {
   margin-bottom: 20px;
 }
 
+.country-list {
+  display: grid;
+  justify-items: center;
+}
+
 .country-component {
   background-color: white;
   width: 300px;
+  margin: 10px;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(233, 232, 232, 0.5);
 }
@@ -88,4 +94,15 @@ button {
 
 .clickable:hover {
   cursor: pointer;
+}
+
+@media only screen and (width >= 600px) {
+  .country-list {
+    grid-template-columns: repeat(2, 1fr)
+  }
+}
+@media only screen and (width >= 992px) {
+  .country-list {
+    grid-template-columns: repeat(4, 1fr)
+  }
 }
