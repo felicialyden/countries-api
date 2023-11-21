@@ -4,6 +4,7 @@ export type CountryProps = {
   population: number;
   region: string;
   capital: string;
+  alpha2Code: string
 };
 
 export type CountryData = {
