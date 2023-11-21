@@ -1,14 +1,9 @@
 import '../index.css'
+import { CountryProps } from '../types'
 
-type CountryProps = {
-    imgPath: string,
-    countryName: string,
-    population: number,
-    region: string,
-    capital: string
-}
 
-export const Country = ({imgPath, countryName, population, region, capital}: CountryProps) => {
+
+export const CountryCard = ({imgPath, countryName, population, region, capital}: CountryProps) => {
 
 return (
     <div className='country-component clickable' id={countryName} onClick={()=> console.log('click')}>

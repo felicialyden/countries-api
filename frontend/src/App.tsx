@@ -3,37 +3,13 @@ import './index.css'
 import { Home } from './components/Home'
 import { Detail } from './components/Detail'
 import { Header}from './components/Header'
+import { BrowserRouter, Route } from 'react-router-dom'
+import { Country, CountryData } from './types'
 
 export function App() {
-  const [page, setPage] = useState('detail')
-  const [country, setCountry] = useState({      
-  flag: '',
-  name: '',
-  nativeName: '', 
-  population: 0,
-  region: '',
-  subRegion: '', 
-  capital: '',
-  domain: '',
-  currencies: '',
-  languages: '',
-  borderCountries: [],})
-  const [countryData, setCountryData] = useState([
-    { 
-      flag: '',
-      name: '',
-      nativeName: '', 
-      population: 0,
-      region: '',
-      subRegion: '', 
-      capital: '',
-      domain: '',
-      currencies: '',
-      languages: '',
-      borderCountries: [],
-      alpha2Code: ''
-    }
-  ])
+  const [country, setCountry] = useState<CountryData>()
+
+  const [countryData, setCountryData] = useState<Country[]>([])
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch('http://localhost:3000/api/countries')
@@ -47,9 +23,10 @@ export function App() {
   return (
       <div>
         <Header />
-        {
-          page === 'home' ? <Home countryData={countryData}/>: <Detail countryData={country}/>
-        }
+        <BrowserRouter>
+        <Route path='/'> <Home countryData={countryData}/></Route>
+        <Route path='/:country'> <Detail countryData={country}/></Route>
+        </BrowserRouter>
       </div>
   )
 }

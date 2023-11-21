@@ -1,18 +1,8 @@
-import { Country } from "./Country"
+import { HomeProps, Country } from "../types"
+import { CountryCard } from "./CountryCard"
 import { Dropdown } from "./Dropdown"
 
-  type Country = {
-    flag: string; 
-    name: string; 
-    population: number; 
-    region: string; 
-    capital: string;
-    alpha2Code: string
-  }
 
-  type HomeProps = { 
-    countryData: Country[]
-  }
 
 export const Home = ({countryData}: HomeProps) => {
   return (
@@ -25,7 +15,7 @@ export const Home = ({countryData}: HomeProps) => {
         {
           countryData.map(({flag, name, population, region, capital, alpha2Code}: Country) => {
             return (
-              <Country 
+              <CountryCard 
               imgPath={flag}
               countryName={name}
               population={population}
