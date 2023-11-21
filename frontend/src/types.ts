@@ -1,4 +1,4 @@
-export type CountryProps = {
+export type CountryCardProps = {
   imgPath: string;
   countryName: string;
   population: number;
@@ -8,6 +8,9 @@ export type CountryProps = {
 };
 
 export type CountryData = {
+  imgPath: string;
+  countryName: string;
+  alpha2Code: string
   flag: string;
   name: string;
   nativeName: string;
@@ -22,18 +25,9 @@ export type CountryData = {
 };
 
 export type DetailProps = {
-  countryData: CountryData| undefined;
-};
-
-export type Country = {
-  flag: string;
-  name: string;
-  population: number;
-  region: string;
-  capital: string;
-  alpha2Code: string;
+  countryData: CountryData[];
 };
 
 export type HomeProps = {
-  countryData: Country[];
+  countryData: CountryData[];
 };

@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import "../index.css";
-import { CountryProps } from "../types";
+import { CountryCardProps } from "../types";
 import { SyntheticEvent } from "react";
 
 export const CountryCard = ({
@@ -10,7 +10,7 @@ export const CountryCard = ({
   region,
   capital,
   alpha2Code,
-}: CountryProps) => {
+}: CountryCardProps) => {
     const navigate = useNavigate()
 
     const handleClick = (e:SyntheticEvent) => {

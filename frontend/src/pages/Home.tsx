@@ -1,4 +1,4 @@
-import { HomeProps, Country } from "../types";
+import { CountryData, HomeProps } from "../types";
 import { CountryCard } from "../components/CountryCard";
 import { Dropdown } from "../components/Dropdown";
 
@@ -18,7 +18,7 @@ export const Home = ({ countryData }: HomeProps) => {
             region,
             capital,
             alpha2Code,
-          }: Country) => {
+          }: CountryData) => {
             return (
               <CountryCard
                 imgPath={flag}
