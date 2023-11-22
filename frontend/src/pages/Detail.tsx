@@ -2,8 +2,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { DetailProps } from "../types";
 
 export const Detail = ({ countryData }: DetailProps) => {
-
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const { countrycode } = useParams();
   const country = countryData.find(
@@ -11,12 +10,15 @@ export const Detail = ({ countryData }: DetailProps) => {
   );
 
   const borderCountryCodes = country?.borders;
-  const borderCountries = countryData.filter((country) => borderCountryCodes?.includes(country.alpha3Code))
-  .map((country) => {return {name: country.name, alpha3Code: country.alpha3Code}})
+  const borderCountries = countryData
+    .filter((country) => borderCountryCodes?.includes(country.alpha3Code))
+    .map(({alpha3Code, name}) => {
+      return { alpha3Code, name  };
+    });
 
   const handleClick = (countryCode: string) => {
-    navigate(`/${countryCode}`)
-  }
+    navigate(`/${countryCode}`);
+  };
 
   const handleGoBack = () => {
     console.log("back");
@@ -42,11 +44,15 @@ export const Detail = ({ countryData }: DetailProps) => {
       <div>
         <h2>Border Countries</h2>
         <ul className="border-country-list">
-          {
-            borderCountries.map((country) => 
-              <li onClick={() => handleClick(country.alpha3Code)} key={country.alpha3Code} className="border-country">{country.name}</li>
-            )
-          }
+          {borderCountries.map(({ alpha3Code, name }) => (
+            <li
+              onClick={() => handleClick(alpha3Code)}
+              key={alpha3Code}
+              className="border-country-list-item clickable"
+            >
+              {name}
+            </li>
+          ))}
         </ul>
       </div>
     </>
