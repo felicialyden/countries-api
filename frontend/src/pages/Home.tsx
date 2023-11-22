@@ -17,7 +17,7 @@ export const Home = ({ countryData }: HomeProps) => {
             population,
             region,
             capital,
-            alpha2Code,
+            alpha3Code,
           }: CountryData) => {
             return (
               <CountryCard
@@ -27,7 +27,7 @@ export const Home = ({ countryData }: HomeProps) => {
                 region={region}
                 capital={capital}
                 key={name}
-                alpha2Code={alpha2Code}
+                alpha3Code={alpha3Code}
               />
             );
           }

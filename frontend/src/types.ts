@@ -4,13 +4,13 @@ export type CountryCardProps = {
   population: number;
   region: string;
   capital: string;
-  alpha2Code: string
+  alpha3Code: string
 };
 
 export type CountryData = {
   imgPath: string;
   countryName: string;
-  alpha2Code: string
+  alpha3Code: string
   flag: string;
   name: string;
   nativeName: string;

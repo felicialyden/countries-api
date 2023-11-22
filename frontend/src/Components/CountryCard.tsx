@@ -9,7 +9,7 @@ export const CountryCard = ({
   population,
   region,
   capital,
-  alpha2Code,
+  alpha3Code,
 }: CountryCardProps) => {
     const navigate = useNavigate()
 
@@ -24,7 +24,7 @@ export const CountryCard = ({
   return (
     <div
       className="country-card clickable"
-      id={alpha2Code}
+      id={alpha3Code}
       onClick={handleClick}
     >
       <img className="small-img" src={imgPath} alt="" />

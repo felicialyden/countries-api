@@ -14,8 +14,7 @@ app.get('/api/countries', async (req, res) => {
   try {
     const data = await fs.readFile(path.join('./db/data.json'), { encoding: 'utf8'})
     const json = await JSON.parse(data)
-    const response = json.slice(0, 9)
-    res.json(response) 
+    res.json(json) 
   } catch (error) {
     console.log(error)
   }
