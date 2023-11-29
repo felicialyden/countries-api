@@ -1,12 +1,35 @@
 import { CountryData, HomeProps } from "../types";
 import { CountryCard } from "../components/CountryCard";
 import { Dropdown } from "../components/Dropdown";
+import { SyntheticEvent } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const Home = ({ countryData }: HomeProps) => {
+  const navigate = useNavigate();
+
+  const handleSubmit = (e: SyntheticEvent) => {
+    e.preventDefault();
+    const form = e.target as HTMLFormElement;
+    const searchValue = (
+      form.elements.namedItem("searchInput") as HTMLInputElement
+    ).value;
+    const searchedCountry = countryData.find(
+      (country) => country.name.toLowerCase() === searchValue.toLowerCase()
+    );
+    if (!searchedCountry) return console.log("not found");
+    navigate(`/${searchedCountry.alpha3Code}`);
+  };
+
   return (
     <>
       <div id="search-options">
-        <input type="text" placeholder="Search for a country..."></input>
+        <form onSubmit={handleSubmit}>
+          <input
+            name="searchInput"
+            type="text"
+            placeholder="Search for a country..."
+          ></input>
+        </form>
         <Dropdown />
       </div>
       <div className="country-list">

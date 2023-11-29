@@ -19,8 +19,9 @@ export function App() {
   }, []);
   return (
     <div>
-      <Header />
+
       <BrowserRouter>
+      <Header />
         <Routes>
           <Route path="/" element={<Home countryData={countryData} />}></Route>
           <Route
