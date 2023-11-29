@@ -1,10 +1,11 @@
-import { CountryData, HomeProps } from "../types";
+import { HomeProps } from "../types";
 import { CountryCard } from "../components/CountryCard";
 import { Dropdown } from "../components/Dropdown";
-import { SyntheticEvent } from "react";
+import { SyntheticEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export const Home = ({ countryData }: HomeProps) => {
+  const [filteredRegion, setfilteredRegion] = useState<string>("all");
   const navigate = useNavigate();
 
   const handleSubmit = (e: SyntheticEvent) => {
@@ -30,31 +31,27 @@ export const Home = ({ countryData }: HomeProps) => {
             placeholder="Search for a country..."
           ></input>
         </form>
-        <Dropdown />
+        <Dropdown setRegion={(region) => setfilteredRegion(region)} />
       </div>
       <div className="country-list">
-        {countryData.map(
-          ({
-            flag,
-            name,
-            population,
-            region,
-            capital,
-            alpha3Code,
-          }: CountryData) => {
+        {countryData.map((country) => {
+          if (
+            filteredRegion === "all" ||
+            filteredRegion === country.region.toLowerCase()
+          ) {
             return (
               <CountryCard
-                imgPath={flag}
-                countryName={name}
-                population={population}
-                region={region}
-                capital={capital}
-                key={name}
-                alpha3Code={alpha3Code}
+                imgPath={country.flag}
+                countryName={country.name}
+                population={country.population}
+                region={country.region}
+                capital={country.capital}
+                key={country.name}
+                alpha3Code={country.alpha3Code}
               />
             );
           }
-        )}
+        })}
       </div>
     </>
   );

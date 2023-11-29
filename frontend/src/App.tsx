@@ -8,7 +8,6 @@ import { CountryData } from "./types";
 
 export function App() {
   const [countryData, setCountryData] = useState<CountryData[]>([]);
-  console.log(countryData)
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch("http://localhost:3000/api/countries");
@@ -19,7 +18,6 @@ export function App() {
   }, []);
   return (
     <div>
-
       <BrowserRouter>
       <Header />
         <Routes>
