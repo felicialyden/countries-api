@@ -21,7 +21,7 @@ export const Detail = ({ countryData }: DetailProps) => {
   };
 
   const handleGoBack = () => {
-    console.log("back");
+    navigate(-1);
   };
 
   return (
