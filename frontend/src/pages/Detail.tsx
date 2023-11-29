@@ -16,17 +16,9 @@ export const Detail = ({ countryData }: DetailProps) => {
       return { alpha3Code, name  };
     });
 
-  const handleClick = (countryCode: string) => {
-    navigate(`/${countryCode}`);
-  };
-
-  const handleGoBack = () => {
-    navigate(-1);
-  };
-
   return (
     <>
-      <button onClick={handleGoBack}>Back</button>
+      <button onClick={() => navigate(-1)}>Back</button>
       <img src={country?.flag} alt={`${country?.name}-flag`} />
       <h2>Country name</h2>
       <div>
@@ -46,7 +38,7 @@ export const Detail = ({ countryData }: DetailProps) => {
         <ul className="border-country-list">
           {borderCountries.map(({ alpha3Code, name }) => (
             <li
-              onClick={() => handleClick(alpha3Code)}
+              onClick={() => navigate(`/${alpha3Code}`)}
               key={alpha3Code}
               className="border-country-list-item clickable"
             >
