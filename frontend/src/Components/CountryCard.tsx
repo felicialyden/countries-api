@@ -17,7 +17,6 @@ export const CountryCard = ({
         const target = e.target as HTMLElement
         const countryCard = target.closest('.country-card') as HTMLElement
         const id = countryCard.id
-        console.log(id)
         navigate(`/${id}`)
     }
 

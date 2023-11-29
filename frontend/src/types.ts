@@ -31,3 +31,7 @@ export type DetailProps = {
 export type HomeProps = {
   countryData: CountryData[];
 };
+
+export type DropdownProps = {
+  setRegion: (region: string) => void
+}

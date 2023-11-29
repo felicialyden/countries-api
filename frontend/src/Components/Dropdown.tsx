@@ -1,8 +1,5 @@
 import { SyntheticEvent } from "react"
-
-type DropdownProps = {
-    setRegion: (region: string) => void
-}
+import { DropdownProps } from "../types"
 
 export const Dropdown = ({ setRegion }: DropdownProps) => {
     const handleFilterRegion = (e: SyntheticEvent) => {
