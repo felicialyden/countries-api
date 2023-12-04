@@ -26,7 +26,7 @@ export const CountryCard = ({
       id={alpha3Code}
       onClick={handleClick}
     >
-      <img className="small-img" src={imgPath} alt="" />
+      <img className="flag-img" src={imgPath} alt="" />
       <div className="country-info">
         <h2 className="bolder">{countryName}</h2>
         <p>Population: {population}</p>
