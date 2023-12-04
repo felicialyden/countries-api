@@ -21,7 +21,6 @@ export const Home = ({ countryData }: HomeProps) => {
       (country) => country.name.toLowerCase() === searchValue.toLowerCase()
     );
     if (!searchedCountry){ 
-      console.log('toast!')
       toast.error('Country not found')
       return
     }
