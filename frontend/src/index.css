@@ -24,7 +24,8 @@ body {
   width: 100vw;
 }
 
-.home-main {
+.home-main,
+.detail-main {
   padding: 20px;
 }
 
@@ -35,7 +36,7 @@ body {
   width: 100%;
   padding: 20px 40px;
   background-color: white;
-  border-bottom: 2px solid rgba(233, 232, 232, 0.5);;
+  border-bottom: 2px solid rgba(233, 232, 232, 0.5);
 }
 
 .header-title {
@@ -88,16 +89,30 @@ body {
   box-shadow: 0 5px 15px rgba(233, 232, 232, 0.5);
 }
 
-.small-img {
+.flag-img {
   width: 100%;
+}
+
+.back-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  margin: 10px 0 30px;
+  border-radius: 5px;
+  border: 2px solid rgba(194, 190, 190, 0.5);
 }
 
 .country-info {
   padding: 20px;
 }
 
-h2 {
-  margin-top: 0;
+.country-info-wrapper {
+  margin: 20px 0 30px;
+}
+
+.country-card-title {
+  margin: 30px 0 20px;
 }
 
 p {
@@ -118,6 +133,7 @@ button {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  margin-top: 10px;
 }
 
 .border-country-list-item {
@@ -125,14 +141,6 @@ button {
   border-radius: 5px;
   border: 2px solid gray;
   padding: 3px 15px;
-}
-
-.bold {
-  font-weight: 600;
-}
-
-.bolder {
-  font-weight: 800;
 }
 
 .center-content {

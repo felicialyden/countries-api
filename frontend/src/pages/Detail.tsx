@@ -17,24 +17,24 @@ export const Detail = ({ countryData }: DetailProps) => {
     });
 
   return (
-    <>
-      <button onClick={() => navigate(-1)}>Back</button>
-      <img src={country?.flag} alt={`${country?.name}-flag`} />
-      <h2>Country name</h2>
-      <div>
+    <div className="detail-main">
+      <button className="back-btn" onClick={() => navigate(-1)}>Back</button>
+      <img className="flag-img" src={country?.flag} alt={`${country?.name}-flag`} />
+      <h2 className="country-card-title">{country?.name}</h2>
+      <div className="country-info-wrapper">
         <p>Native Name: {country?.nativeName}</p>
         <p>Population: {country?.population}</p>
         <p>Region: {country?.region}</p>
         <p>Sub Region: {country?.subregion}</p>
         <p>Capital: {country?.capital}</p>
       </div>
-      <div>
+      <div className="country-info-wrapper">
         <p>Top Level Domain: {country?.topLevelDomain[0]}</p>
         <p>Currencies: {country?.currencies[0].name}</p>
         <p>Languages: {country?.languages[0].name}</p>
       </div>
-      <div>
-        <h2>Border Countries</h2>
+      <div className="country-info-wrapper">
+        <h3>Border Countries:</h3>
         <ul className="border-country-list">
           {borderCountries.map(({ alpha3Code, name }) => (
             <li
@@ -47,6 +47,6 @@ export const Detail = ({ countryData }: DetailProps) => {
           ))}
         </ul>
       </div>
-    </>
+    </div>
   );
 };
