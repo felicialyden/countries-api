@@ -8,7 +8,7 @@ export const Dropdown = ({ setRegion }: DropdownProps) => {
     }
 
     return (
-        <select onChange={handleFilterRegion} className='clickable align-right' name="regions" id="regions"> 
+        <select onChange={handleFilterRegion} className='regions-select clickable' name="regions" id="regions"> 
         <option value="all">Filter by region</option> 
         <option value="all">All</option> 
         <option value="africa">Africa</option> 

@@ -22,10 +22,11 @@ export const Home = ({ countryData }: HomeProps) => {
   };
 
   return (
-    <>
-      <div id="search-options">
-        <form onSubmit={handleSubmit}>
+    <main className="home-main">
+      <div className="search-options">
+        <form className="search-form" onSubmit={handleSubmit}>
           <input
+            className="search-input"
             name="searchInput"
             type="text"
             placeholder="Search for a country..."
@@ -53,6 +54,6 @@ export const Home = ({ countryData }: HomeProps) => {
           }
         })}
       </div>
-    </>
+    </main>
   );
 };
