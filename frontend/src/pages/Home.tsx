@@ -3,6 +3,9 @@ import { CountryCard } from "../components/CountryCard";
 import { Dropdown } from "../components/Dropdown";
 import { SyntheticEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from 'react-toastify';
+import ErrorToast from "../components/ErrorToast";
+
 
 export const Home = ({ countryData }: HomeProps) => {
   const [filteredRegion, setfilteredRegion] = useState<string>("all");
@@ -17,8 +20,12 @@ export const Home = ({ countryData }: HomeProps) => {
     const searchedCountry = countryData.find(
       (country) => country.name.toLowerCase() === searchValue.toLowerCase()
     );
-    if (!searchedCountry) return console.log("not found");
-    navigate(`/${searchedCountry.alpha3Code}`);
+    if (!searchedCountry){ 
+      console.log('toast!')
+      toast.error('Country not found')
+      return
+    }
+    navigate(`/${searchedCountry?.alpha3Code}`);
   };
 
   return (
@@ -31,6 +38,7 @@ export const Home = ({ countryData }: HomeProps) => {
             type="text"
             placeholder="Search for a country..."
           ></input>
+          <ErrorToast />
         </form>
         <Dropdown setRegion={(region) => setfilteredRegion(region)} />
       </div>
