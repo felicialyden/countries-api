@@ -29,7 +29,7 @@ export const CountryCard = ({
       <img className="flag-img" src={imgPath} alt="" />
       <div className="country-info">
         <h2 className="bolder">{countryName}</h2>
-        <p>Population: {population}</p>
+        <p>Population: {population.toLocaleString()}</p>
         <p>Region: {region}</p>
         <p>Capital: {capital}</p>
       </div>

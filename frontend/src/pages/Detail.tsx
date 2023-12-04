@@ -23,7 +23,7 @@ export const Detail = ({ countryData }: DetailProps) => {
       <h2 className="country-card-title">{country?.name}</h2>
       <div className="country-info-wrapper">
         <p>Native Name: {country?.nativeName}</p>
-        <p>Population: {country?.population}</p>
+        <p>Population: {country?.population.toLocaleString()}</p>
         <p>Region: {country?.region}</p>
         <p>Sub Region: {country?.subregion}</p>
         <p>Capital: {country?.capital}</p>
@@ -34,7 +34,7 @@ export const Detail = ({ countryData }: DetailProps) => {
         <p>Languages: {country?.languages[0].name}</p>
       </div>
       <div className="country-info-wrapper">
-        <h3>Border Countries:</h3>
+        {borderCountries.length > 0 && <h3>Border Countries:</h3>}
         <ul className="border-country-list">
           {borderCountries.map(({ alpha3Code, name }) => (
             <li

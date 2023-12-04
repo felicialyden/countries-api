@@ -93,6 +93,10 @@ body {
   width: 100%;
 }
 
+.country-card>.flag-img {
+  border-radius: 10px 10px 0 0;
+}
+
 .back-btn {
   display: flex;
   justify-content: center;
