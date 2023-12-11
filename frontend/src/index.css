@@ -93,15 +93,16 @@ body {
   box-shadow: 0 5px 15px rgba(233, 232, 232, 0.5);
 } 
 
+.country-card>.flag-img {
+  border-radius: 10px 10px 0 0;
+}
+
 .flag-img {
   width: 100%;
   height: 40%;
   object-fit: cover;
 }
 
-.country-card>.flag-img {
-  border-radius: 10px 10px 0 0;
-}
 
 .back-btn {
   display: flex;
@@ -122,7 +123,7 @@ body {
   margin: 20px 0 30px;
 }
 
-.country-card-title {
+.country-card>.country-card-title {
   margin: 20px 20px 0px;
 }
 
@@ -181,6 +182,26 @@ button {
 
   .regions-select  {
     align-self: flex-end;
+  }
+
+  .country-details-wrapper {
+    margin: 0 20px;
+    padding: 20px;
+  }
+  
+  .country-info-wrapper-wrapper {
+    display: flex;
+    gap: 10px;
+  }
+
+  .country-data>.flag-img {
+    width: 50%;
+    height: 20%;
+    object-fit: cover;
+  }
+
+  .country-data {
+    display: flex;
   }
 }
 
