@@ -66,14 +66,14 @@ body {
   padding: 10px 15px;
   border: none;
   width: 100%;
-  box-shadow: 0 5px 15px rgba(233, 232, 232, 0.5);
+  box-shadow: 0 0 7px rgba(129, 126, 126, 0.5);
 }
 
 .regions-select {
   align-self: flex-start;
   padding: 10px 15px;
   border: none;
-  box-shadow: 0 5px 15px rgba(233, 232, 232, 0.5);
+  box-shadow: 0 0 7px rgba(129, 126, 126, 0.5);
 }
 
 .country-list {
@@ -152,7 +152,6 @@ button {
   border-radius: 5px;
   padding: 3px 15px;
   box-shadow: 0 0 7px rgba(129, 126, 126, 0.5);
-
 }
 
 .center-content {
@@ -167,5 +166,21 @@ button {
 
 .bold-text {
   font-weight: 600;
+}
+
+@media only screen and (width >= 600px) {
+  .search-form {
+    width: 400px;
+  }
+
+  .search-options {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .regions-select  {
+    align-self: flex-end;
+  }
 }
 
