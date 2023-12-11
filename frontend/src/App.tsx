@@ -10,7 +10,7 @@ export function App() {
   const [countryData, setCountryData] = useState<CountryData[]>([]);
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch("http://localhost:3000/api/countries");
+      const response = await fetch("http://localhost:3001/api/countries");
       const json = await response.json();
       setCountryData(Array.from(json));
     };

@@ -34,7 +34,7 @@ body {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 20px 40px;
+  padding: 20px 20px;
   background-color: white;
   border-bottom: 2px solid rgba(233, 232, 232, 0.5);
 }
@@ -100,11 +100,12 @@ body {
 .back-btn {
   display: flex;
   justify-content: center;
+  gap: 5px;
   align-items: center;
-  padding: 10px 20px;
+  padding: 10px 15px;
   margin: 10px 0 30px;
-  border-radius: 5px;
-  border: 2px solid rgba(194, 190, 190, 0.5);
+  border-radius: 3px;
+  box-shadow: 0 0 7px rgba(129, 126, 126, 0.5);
 }
 
 .country-info {
@@ -143,8 +144,9 @@ button {
 .border-country-list-item {
   list-style-type: none;
   border-radius: 5px;
-  border: 2px solid gray;
   padding: 3px 15px;
+  box-shadow: 0 0 7px rgba(129, 126, 126, 0.5);
+
 }
 
 .center-content {
@@ -155,6 +157,10 @@ button {
 
 .clickable:hover {
   cursor: pointer;
+}
+
+.bold-text {
+  font-weight: 600;
 }
 
 @media only screen and (width >= 600px) {
