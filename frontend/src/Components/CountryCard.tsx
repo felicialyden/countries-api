@@ -11,14 +11,14 @@ export const CountryCard = ({
   capital,
   alpha3Code,
 }: CountryCardProps) => {
-    const navigate = useNavigate()
+  const navigate = useNavigate();
 
-    const handleClick = (e:SyntheticEvent) => {
-        const target = e.target as HTMLElement
-        const countryCard = target.closest('.country-card') as HTMLElement
-        const id = countryCard.id
-        navigate(`/${id}`)
-    }
+  const handleClick = (e: SyntheticEvent) => {
+    const target = e.target as HTMLElement;
+    const countryCard = target.closest(".country-card") as HTMLElement;
+    const id = countryCard.id;
+    navigate(`/${id}`);
+  };
 
   return (
     <div
@@ -26,12 +26,21 @@ export const CountryCard = ({
       id={alpha3Code}
       onClick={handleClick}
     >
-      <img className="flag-img" src={imgPath} alt="" />
+      <img className="flag-img" src={imgPath} alt={`flag-${alpha3Code}`} />
+      <h2 className="country-card-title">{countryName}</h2>
       <div className="country-info">
-        <h2 className="bolder">{countryName}</h2>
-        <p>Population: {population.toLocaleString()}</p>
-        <p>Region: {region}</p>
-        <p>Capital: {capital}</p>
+        <p>
+          <span className="bold-text">Population: </span>
+          {population.toLocaleString()}
+        </p>
+        <p>
+          <span className="bold-text">Region: </span>
+          {region}
+        </p>
+        <p>
+          <span className="bold-text">Capital: </span>
+          {capital}
+        </p>
       </div>
     </div>
   );
