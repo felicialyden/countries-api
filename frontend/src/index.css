@@ -66,14 +66,14 @@ body {
   padding: 10px 15px;
   border: none;
   width: 100%;
-  box-shadow: 0 0 7px rgba(129, 126, 126, 0.5);
+  box-shadow: 0 5px 15px rgba(233, 232, 232, 0.5);
 }
 
 .regions-select {
   align-self: flex-start;
   padding: 10px 15px;
   border: none;
-  box-shadow: 0 0 7px rgba(129, 126, 126, 0.5);
+  box-shadow: 0 5px 15px rgba(233, 232, 232, 0.5);
 }
 
 .country-list {
