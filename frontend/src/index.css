@@ -30,11 +30,8 @@ body {
 }
 
 .header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   width: 100%;
-  padding: 20px 20px;
+  padding: 20px 30px;
   background-color: white;
   border-bottom: 2px solid rgba(233, 232, 232, 0.5);
 }
